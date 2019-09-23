@@ -19,8 +19,16 @@ const router = new Router({
       meta: {
         // 是否验证
         noValidated: true,
-        
-        role: ['user', 'admin', 'superadmin'],
+      },
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: Hoc({
+        user: () => import('@/views/about.vue'),
+      }),
+      meta: {
+        roles: ['user'],
       },
     },
   ]

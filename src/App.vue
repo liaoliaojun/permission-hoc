@@ -1,17 +1,23 @@
 <template>
-  <div id="app">
+  <div id="app" class="flex flex-col items-center mt-5">
     <router-view class="text-center text-5xl"/>
     
-    <div class="flex justify-center">
-      <button class="button" @click="setRole('user')">设置user</button>
-      <button class="button" @click="setRole('admin')">设置admin</button>
+    <div class="flex justify-center items-center mt-5">
+      <span class="leading-loose">设置角色：</span>
+      <button class="button mr-2" @click="setRole('user')">设置user</button>
+      <button class="button mr-2" @click="setRole('admin')">设置admin</button>
       <button class="button" @click="setRole('superadmin')">superadmin</button>
+    </div>
+    
+    <div class="flex items-center leading-loose mt-5">
+      <p>user可以切换到about页面， admin和superadmin无法切换到about：</p>
+      <router-link :to="{name: 'about'}" class="button">切换至about路由</router-link>
     </div>
   </div>
 </template>
 
 <script>
-  import {mapActions, } from 'vuex'
+  import {mapActions} from 'vuex'
 
   export default {
     methods: {
@@ -28,7 +34,6 @@
         } else {
           // 获取角色信息 并刷新页面
           setTimeout(() => {
-            localStorage.setItem('app_role', 'user')
             this.initRole()
             this.$router.go(0)
           }, 1000)
