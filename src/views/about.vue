@@ -1,5 +1,5 @@
 <template>
   <div class="bg-blue">
-    about页面
+    页面：about
   </div>
 </template>

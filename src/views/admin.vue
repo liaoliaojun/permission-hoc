@@ -1,5 +1,5 @@
 <template>
   <div>
-    admin
+    角色：admin
   </div>
 </template>

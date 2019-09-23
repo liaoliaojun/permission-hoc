@@ -1,5 +1,5 @@
 <template>
   <div>
-    user
+    角色：user
   </div>
 </template>
