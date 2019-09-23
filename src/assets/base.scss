@@ -1,0 +1,14 @@
+@tailwind base;
+
+html, body {
+  @apply font-sans antialiased;
+
+  height: 100vh;
+  font-size: 14px;
+}
+
+svg {
+  @apply fill-current;
+}
+
+@tailwind utilities;
